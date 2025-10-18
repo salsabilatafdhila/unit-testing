@@ -7,7 +7,7 @@ $api_key="50114b823f9a418a90fdede328db35ae";
  
 //url api untuk ambil berita headline di Indonesia
 $url="https://newsapi.org/v2/top-headlines?country=us&apiKey=".$api_key;
- 
+
 //menyimpan hasil dalam variabel
 $data=http_request_get($url);
  
@@ -56,7 +56,7 @@ $hasil=json_decode($data,true);
               <img src="<?php echo $row['urlToImage']; ?>" class="card-img-top" height="180px">
               <div class="card-body">
                 <p class="card-text"><i>Oleh <?php echo $row['author']; ?></i> ~ <?php echo $row['title']; ?></p>
-                <p class="text-right"><a href="<?php echo $row['urlToImage']; ?>" target="_blank">Selengkapnya..</a></p>
+                <p class="text-right"><a href="<?php echo $row['url']; ?>" target="_blank">Selengkapnya..</a></p>
               </div>
             </div>
         </div>
