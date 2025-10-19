@@ -21,12 +21,61 @@ $hasil=json_decode($data,true);
     <title>Rest Client dengan cURL</title>
     <!-- CSS Bootstrap -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- Tambahan CSS untuk ubah warna dan font -->
+    <style>
+      body {
+        background-color: #121212; /* latar belakang gelap */
+        color: #f5f5f5; /* teks terang */
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .navbar {
+        background-color: #1e1e1e !important; /* navbar gelap */
+      }
+
+      .navbar-brand {
+        color: #ffcc00 !important; /* nama web warna kuning terang */
+        font-weight: 700;
+        font-size: 1.4rem;
+      }
+
+      .nav-link {
+        color: #f0f0f0 !important;
+      }
+
+      .nav-link:hover {
+        color: #ffcc00 !important;
+      }
+
+      .card {
+        background-color: #1c1c1c;
+        border: 1px solid #333;
+      }
+
+      .card-text {
+        color: #ddd;
+      }
+
+      /* Tombol khusus berita */
+      .btn-news {
+        background-color: #ffcc00; /* kuning keemasan */
+        color: #000;
+        font-weight: 600;
+        border: none;
+      }
+
+      .btn-news:hover {
+        background-color: #e6b800;
+        color: #000;
+      }
+    </style>
 </head>
 <body>
  
 <!-- navbar -->
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
-  <a class="navbar-brand" href="#">RestClient</a>
+  <a class="navbar-brand ms-4" href="#">RestClient</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -56,7 +105,14 @@ $hasil=json_decode($data,true);
               <img src="<?php echo $row['urlToImage']; ?>" class="card-img-top" height="180px">
               <div class="card-body">
                 <p class="card-text"><i>Oleh <?php echo $row['author']; ?></i> ~ <?php echo $row['title']; ?></p>
-                <p class="text-right"><a href="<?php echo $row['url']; ?>" target="_blank">Selengkapnya..</a></p>
+                <p class="text-right">
+                <a href="<?php echo $row['url']; ?>" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="btn btn-news btn-sm">
+                  Selengkapnya
+                </a>
+              </p>
               </div>
             </div>
         </div>
